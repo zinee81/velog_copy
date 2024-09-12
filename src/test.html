@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>웹 페이지 레이아웃</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1200px;
+        width: 100%;
+      }
+
+      .card {
+        height: 330px;
+        background-color: white;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.2s ease;
+        cursor: pointer;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+      }
+
+      .card_img {
+        width: 330px;
+        height: 167px;
+
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .content {
+        padding: 15px;
+      }
+
+      .content h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+
+      .content p {
+        font-size: 0.9em;
+        color: #555;
+        margin-bottom: 15px;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8em;
+        color: #777;
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+      }
+
+      .footer span {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card_img"><img src="https://images.unsplash.com/photo-1725900653710-d1db440048bc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzfGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D" alt="이미지 1" /></div>
+        <div class="content">
+          <h3>겁공, 디자인 취준생 분들에게 하고 싶은 말</h3>
+          <p>취업 고민들에 대해서 생각을 정리해봤어요...</p>
+          <div class="footer">
+            <span><img src="./assets/react.svg" alt="사용자" />by Doeon Kwon 권도연</span>
+            <span>100 ♥</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

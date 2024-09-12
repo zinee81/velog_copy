@@ -1,0 +1,55 @@
+/* 전체 배경색, 안쪽 여백 지정 */
+body {
+  background-color: #dddddd;
+}
+#search {
+  margin: 10px 0 0 20px;
+}
+#wrap {
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap; /* 자동 줄바꿈 활성화 */
+  gap: 10px; /* 포스트 간의 간격 */
+  justify-content: flex-start; /* 왼쪽 정렬 */
+}
+
+/* 회원가입 폼 배경색, 스타일 지정 */
+.post {
+  width: 250px; /* 포스트의 가로 사이즈 설정 */
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s; /* 그림자가 0.3초동안 서서히 나타남 */
+}
+
+.post:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* 호버 시 그림자 변경 */
+}
+
+.post h2 {
+  height: 100px;
+  overflow: hidden; /* 글자가 가로폭을 초과할 때 숨기기 */
+  text-overflow: ellipsis; /* 글자가 가로 폭을 초과할 때 말줄임 처리 */
+}
+
+.post p {
+  width: 100%;
+  height: 120px;
+  border-top: 1px solid #aaaaaa;
+  border-bottom: 1px solid #aaaaaa;
+  padding: 10px 0;
+  overflow: hidden; /* 글자가 가로폭을 초과할 때 숨기기 */
+  text-overflow: ellipsis; /* 글자가 가로 폭을 초과할 때 말줄임 처리 */
+}
+
+.post span {
+  padding: 5px;
+}
+.post span.like {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
