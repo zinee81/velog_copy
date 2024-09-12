@@ -6,10 +6,10 @@ function App() {
   const [state, setState] = useState("trending");
 
   return (
-    <>
+    <div className="wrapper">
       <Header state={state} setState={setState} />
       <Post state={state} />
-    </>
+    </div>
   );
 }
 
