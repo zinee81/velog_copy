@@ -38,7 +38,7 @@ export const postData = {
       title: "인기 글 4",
       content: "이것은 인기 글 4의 내용입니다. 이 글은 환경 문제와 지속 가능한 에너지 사용에 대해 다루고 있으며, 많은 이들이 이 주제에 대해 깊이 있는 토론을 하고 있습니다.",
       author: "사용자4",
-      createdAt: "2024-09-08T11:20:00Z",
+      createdAt: "2024-09-02T11:20:00Z",
       image: "https://images.unsplash.com/photo-1725610588145-a508e5cfe90b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDMxfGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D",
       likes: 95,
       userImage: "https://randomuser.me/api/portraits/men/63.jpg",

@@ -1,0 +1,66 @@
+.post_input {
+  margin: 10px;
+}
+
+.post_input input {
+  width: 100%;
+  border: 0;
+  font-size: 14pt;
+  line-height: 1.8em;
+}
+
+.post_input input:focus {
+  outline: none; /* outline 테두리 없애기 */
+}
+
+::placeholder {
+  color: #999999;
+  opacity: 1; /* Firefox */
+}
+
+.post_input select {
+  color: #999999;
+  border: 1px solid #cccccc;
+  font-size: 14pt;
+  line-height: 1.8em;
+  margin: 10px 0;
+}
+
+.post_input textarea {
+  width: 100%;
+  height: 100px;
+  border: 0;
+  font-size: 13pt;
+  margin: 10px 0;
+  outline: none; /* outline 테두리 없애기 */
+}
+
+.post_input textarea::placeholder {
+  font-style: italic;
+}
+
+.post_input #title {
+  font-size: 3em;
+  line-height: 2.5em;
+}
+
+.post_input #title::placeholder {
+  font-weight: bold;
+}
+
+.underline {
+  width: 60px;
+  height: 5px;
+  background-color: #111111;
+  margin-bottom: 20px;
+}
+
+.post_input button {
+  font-size: 15pt;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  background-color: #28a745;
+}

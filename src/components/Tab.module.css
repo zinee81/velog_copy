@@ -1,0 +1,15 @@
+.tab {
+  color: #999999;
+  cursor: pointer;
+  padding: 5px;
+  margin: 5px;
+}
+
+.active {
+  color: #111111;
+  cursor: pointer;
+  font-weight: bold;
+  border-bottom: 3px solid #333333;
+  padding: 5px;
+  margin: 5px;
+}

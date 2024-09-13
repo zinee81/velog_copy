@@ -1,30 +1,18 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowTrendUp } from "@fortawesome/free-solid-svg-icons";
-import { faClock } from "@fortawesome/free-regular-svg-icons";
-import { faRss } from "@fortawesome/free-solid-svg-icons";
+import styles from "./Header.module.css";
+import Tab from "./Tab.jsx";
 
-function Span({ isSelected, children, ...props }) {
-  // 함수를 넣을때 : 괄호를 빼고 이름만 넣는다.
-  return (
-    <span {...props} className={isSelected ? "active" : "tab"}>
-      {children}
-    </span>
-  );
-}
-
-export default function Header({ state, setState }) {
+export default function Header({ category, setCategory, showWrite, setShowWrite }) {
   return (
     <header>
-      <h3>velog</h3>
-      <Span onClick={() => setState("trending")} isSelected={state === "trending"}>
-        <FontAwesomeIcon icon={faArrowTrendUp} /> 트렌딩
-      </Span>
-      <Span onClick={() => setState("latest")} isSelected={state === "latest"}>
-        <FontAwesomeIcon icon={faClock} /> 최신
-      </Span>
-      <Span onClick={() => setState("feed")} isSelected={state === "feed"}>
-        <FontAwesomeIcon icon={faRss} /> 피드
-      </Span>
+      <div className={styles.header_title}>
+        <div>
+          <h3>velog</h3>
+        </div>
+        <div className={styles.new_post} onClick={() => (showWrite ? setShowWrite(false) : setShowWrite(true))}>
+          <label className={styles.newbtn}>{showWrite ? "메인으로" : "새 글 작성"}</label>
+        </div>
+      </div>
+      {showWrite ? <></> : <Tab category={category} setCategory={setCategory} />}
     </header>
   );
 }
