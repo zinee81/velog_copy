@@ -1,0 +1,37 @@
+dialog {
+  font-size: 14px;
+  padding: 20px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px reba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  padding: 10px 0;
+}
+
+.author {
+  padding: 10px;
+}
+
+.content {
+  padding: 20px;
+}
+
+button {
+  background-color: antiquewhite;
+  color: gray;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 5px;
+}
+
+.close {
+  text-align: right;
+}

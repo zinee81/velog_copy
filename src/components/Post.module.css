@@ -3,6 +3,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 20px; /* 포스트 간의 간격 */
   margin: auto;
+  padding-top: 30px;
 }
 
 /* 포스트 스타일 */
@@ -45,6 +46,7 @@
 }
 
 .post .content p {
+  height: 72px;
   padding: 10px 0;
   display: -webkit-box;
   -webkit-box-orient: vertical;

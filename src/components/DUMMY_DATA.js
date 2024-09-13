@@ -44,6 +44,17 @@ export const postData = {
       userImage: "https://randomuser.me/api/portraits/men/63.jpg",
       comments: 10,
     },
+    {
+      id: 5,
+      title: "인기 글 5",
+      content: "이것은 피드 게시물 2의 내용입니다. 주로 일상 속에서 겪는 소소한 이야기들과 사회적 이슈에 대한 개인적인 의견을 담고 있습니다.",
+      author: "사용자2",
+      createdAt: "2024-09-10T09:20:00Z",
+      image: "https://images.unsplash.com/photo-1683806743160-2fc2e159dc66?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDYwfGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D",
+      likes: 95,
+      userImage: "https://randomuser.me/api/portraits/men/67.jpg",
+      comments: 6,
+    },
     // 추가적인 요소들...
   ],
   latest: [
@@ -69,12 +80,9 @@ export const postData = {
       userImage: "https://randomuser.me/api/portraits/men/65.jpg",
       comments: 5,
     },
-    // 추가적인 요소들...
-  ],
-  feed: [
     {
-      id: 1,
-      title: "피드 게시물 1",
+      id: 3,
+      title: "최신 뉴스 3",
       content: "이것은 피드 게시물 1의 내용입니다. 이 게시물은 개인적인 경험과 생각을 공유하며, 특히 일상에서 느끼는 감정과 생각을 중심으로 이야기를 전개하고 있습니다.",
       author: "사용자1",
       createdAt: "2024-09-11T08:00:00Z",
@@ -83,17 +91,9 @@ export const postData = {
       userImage: "https://randomuser.me/api/portraits/men/66.jpg",
       comments: 16,
     },
-    {
-      id: 2,
-      title: "피드 게시물 2",
-      content: "이것은 피드 게시물 2의 내용입니다. 주로 일상 속에서 겪는 소소한 이야기들과 사회적 이슈에 대한 개인적인 의견을 담고 있습니다.",
-      author: "사용자2",
-      createdAt: "2024-09-10T09:20:00Z",
-      image: "https://images.unsplash.com/photo-1683806743160-2fc2e159dc66?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDYwfGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D",
-      likes: 95,
-      userImage: "https://randomuser.me/api/portraits/men/67.jpg",
-      comments: 6,
-    },
+    // 추가적인 요소들...
+  ],
+  feed: [
     // 추가적인 요소들...
   ],
 };
