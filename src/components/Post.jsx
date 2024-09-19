@@ -2,8 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Post.module.css";
 import DetailPage from "./DetailPage";
+import { useRef, useState } from "react";
 
 export default function Post({ category, data }) {
+  const [selectedPost, setSelectedPost] = useState({ id: "", title: "", author: "", createdAt: "", image: "", content: "" });
+  const dialogRef = useRef();
+
   function getDate(createdAt) {
     const postDate = new Date(createdAt);
     const nowDate = new Date();
@@ -21,16 +25,27 @@ export default function Post({ category, data }) {
     }
   }
 
+  function openPost(post) {
+    setSelectedPost(post);
+    dialogRef.current.openModal();
+  }
+
   return (
-    <>
-      {/* <DetailPage /> */}
-      <div id={styles.wrap}>
-        {data[category].length === 0 ? (
-          <div>새로운 피드가 없네요.</div>
-        ) : (
-          data[category].map((post) => {
-            return (
-              <div className={styles.post} key={post.id}>
+    <div id={styles.wrap}>
+      <DetailPage post={selectedPost} ref={dialogRef} />
+
+      {data[category].length === 0 ? (
+        <div>새로운 피드가 없네요.</div>
+      ) : (
+        data[category].map((post) => {
+          // 각 포스트마다 ref를 생성해서 배열에 저장
+          // if (!dialogRef.current[index]) {
+          //   dialogRef.current[index] = { current: null };
+          // }
+          // ref={(el) => (dialogRef.current[index] = el)}
+          return (
+            <>
+              <div className={styles.post} key={post.id} onClick={() => openPost(post)}>
                 <div className={styles.post_img}>
                   <img src={post.image} alt="포스트 이미지" />
                 </div>
@@ -51,10 +66,10 @@ export default function Post({ category, data }) {
                   </span>
                 </div>
               </div>
-            );
-          })
-        )}
-      </div>
-    </>
+            </>
+          );
+        })
+      )}
+    </div>
   );
 }
