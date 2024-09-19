@@ -2,12 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Post.module.css";
 import DetailPage from "./DetailPage";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function Post({ category, data }) {
   const [selectedPost, setSelectedPost] = useState({ id: "", title: "", author: "", createdAt: "", image: "", content: "" });
   const dialogRef = useRef();
-
+  
   function getDate(createdAt) {
     const postDate = new Date(createdAt);
     const nowDate = new Date();
@@ -25,9 +25,15 @@ export default function Post({ category, data }) {
     }
   }
 
+  useEffect(() => {
+    if (selectedPost.id) {
+      dialogRef.current.openModal();
+    }
+  }, [selectedPost]);
+
   function openPost(post) {
     setSelectedPost(post);
-    dialogRef.current.openModal();
+    // dialogRef.current.openModal();
   }
 
   return (
