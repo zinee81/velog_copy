@@ -8,16 +8,14 @@ export default function Main({ category, showWrite, setShowWrite }) {
   const [data, setData] = useState({ trending: [], latest: [], feed: [] });
 
   useEffect(() => {
-    const data = localStorage.getItem("postData");
-    let postList = {};
+    let localData = JSON.parse(localStorage.getItem("postData"));
 
-    if (data) {
-      postList = JSON.parse(data);
-    } else {
+    if (!localData) {
       localStorage.setItem("postData", JSON.stringify(postData));
+      localData = JSON.parse(localStorage.getItem("postData"));
     }
 
-    setData(postList);
+    setData(localData);
   }, []);
 
   if (showWrite) {
