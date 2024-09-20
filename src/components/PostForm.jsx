@@ -38,12 +38,7 @@ export default function PostForm({ setData, setShowWrite }) {
         // prevArray.push(newData)
         // 객체반환
         newPost = { ...prev, [category]: [...newArray] };
-        return {
-          // 기존 객체의 값 넣기
-          ...prev,
-          // 선택된 카테고리의 값을 push된 배열값 넣어주기
-          [category]: [...newArray],
-        };
+        return newPost;
       });
 
       setPost(newPost);
