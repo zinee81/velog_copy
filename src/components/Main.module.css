@@ -1,0 +1,25 @@
+#wrap {
+  display: grid; /* Grid 사용 */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px; /* 포스트 간의 간격 */
+  margin: auto;
+  padding-top: 30px;
+}
+
+@media screen and (max-width: 1350px) {
+  #wrap {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #wrap {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

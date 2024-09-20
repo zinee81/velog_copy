@@ -2,12 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Post.module.css";
 import DetailPage from "./DetailPage";
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
+import { removePost } from "./localStorage.js";
 
-export default function Post({ category, data }) {
-  const [selectedPost, setSelectedPost] = useState({ id: "", title: "", author: "", createdAt: "", image: "", content: "" });
+export default function Post({ post, setData, category }) {
   const dialogRef = useRef();
-  
+
   function getDate(createdAt) {
     const postDate = new Date(createdAt);
     const nowDate = new Date();
@@ -25,57 +25,43 @@ export default function Post({ category, data }) {
     }
   }
 
-  useEffect(() => {
-    if (selectedPost.id) {
-      dialogRef.current.openModal();
-    }
-  }, [selectedPost]);
+  function openPost() {
+    dialogRef.current.openModal();
+  }
 
-  function openPost(post) {
-    setSelectedPost(post);
-    // dialogRef.current.openModal();
+  function deletePost(id) {
+    // const newData = data[category].filter((post) => post.id !== id);
+    setData((prev) => ({ ...prev, [category]: [...removePost(id, category)] }));
   }
 
   return (
-    <div id={styles.wrap}>
-      <DetailPage post={selectedPost} ref={dialogRef} />
+    <>
+      <DetailPage post={post} ref={dialogRef} postDate={getDate(post.createdAt)} />
 
-      {data[category].length === 0 ? (
-        <div>새로운 피드가 없네요.</div>
-      ) : (
-        data[category].map((post) => {
-          // 각 포스트마다 ref를 생성해서 배열에 저장
-          // if (!dialogRef.current[index]) {
-          //   dialogRef.current[index] = { current: null };
-          // }
-          // ref={(el) => (dialogRef.current[index] = el)}
-          return (
-            <>
-              <div className={styles.post} key={post.id} onClick={() => openPost(post)}>
-                <div className={styles.post_img}>
-                  <img src={post.image} alt="포스트 이미지" />
-                </div>
-                <div className={styles.content}>
-                  <h3>{post.title}</h3>
-                  <p>{post.content}</p>
-                  <div className={styles.date}>
-                    {getDate(post.createdAt)} · {post.comments}개의 댓글
-                  </div>
-                </div>
-                <div className={styles.footer}>
-                  <span className={styles.by}>
-                    <img src={post.userImage} alt="사용자" />
-                    by <label className={styles.byid}> {post.author}</label>
-                  </span>
-                  <span className={styles.like}>
-                    <FontAwesomeIcon icon={faHeart} /> {post.likes}
-                  </span>
-                </div>
-              </div>
-            </>
-          );
-        })
-      )}
-    </div>
+      <div className={styles.post} key={post.id} onClick={openPost}>
+        <div className={styles.post_img}>
+          <div className={styles.delete}>
+            <button onClick={() => deletePost(post.id)}>삭제</button>
+          </div>
+          <img src={post.image} alt="포스트 이미지" />
+        </div>
+        <div className={styles.content}>
+          <h3>{post.title}</h3>
+          <p>{post.content}</p>
+          <div className={styles.date}>
+            {getDate(post.createdAt)} · {post.comments}개의 댓글
+          </div>
+        </div>
+        <div className={styles.footer}>
+          <span className={styles.by}>
+            <img src={post.userImage} alt="사용자" />
+            by <label className={styles.byid}> {post.author}</label>
+          </span>
+          <span className={styles.like}>
+            <FontAwesomeIcon icon={faHeart} /> {post.likes}
+          </span>
+        </div>
+      </div>
+    </>
   );
 }

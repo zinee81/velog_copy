@@ -1,7 +1,7 @@
 import { forwardRef, useImperativeHandle, useRef } from "react";
 import styles from "./DetailPage.module.css";
 
-const detailPage = forwardRef(function DetailPage({ post }, ref) {
+const detailPage = forwardRef(function DetailPage({ post, postDate }, ref) {
   const dialogChild = useRef();
 
   useImperativeHandle(ref, () => {
@@ -17,10 +17,10 @@ const detailPage = forwardRef(function DetailPage({ post }, ref) {
   }
 
   return (
-    <dialog ref={dialogChild} key={post.id}>
+    <dialog ref={dialogChild}>
       <h1>{post.title}</h1>
       <div className={styles.author}>
-        <b>{post.author}</b> · {post.createdAt}
+        <b>{post.author}</b> · {postDate}
       </div>
       <div>
         <img src={post.image} alt="" width="500px" />
