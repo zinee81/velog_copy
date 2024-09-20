@@ -22,7 +22,7 @@ const detailPage = forwardRef(function DetailPage({ post, postDate }, ref) {
       <div className={styles.author}>
         <b>{post.author}</b> · {postDate}
       </div>
-      <div>
+      <div className={styles.postimg}>
         <img src={post.image} alt="" className={styles.postimg} />
       </div>
       <div className={styles.content}>{post.content}</div>
