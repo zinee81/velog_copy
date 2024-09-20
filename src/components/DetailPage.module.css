@@ -18,7 +18,9 @@ h1 {
 .author {
   padding: 10px;
 }
-
+.imgdiv {
+  max-width: 500px;
+}
 .postimg {
   width: 100%;
 }
