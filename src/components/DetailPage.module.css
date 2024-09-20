@@ -19,9 +19,12 @@ h1 {
   padding: 10px;
 }
 
+.postimg {
+  max-width: 500px;
+}
 .content {
   padding: 20px;
-  width: 500px;
+  max-width: 500px;
 }
 
 button {
