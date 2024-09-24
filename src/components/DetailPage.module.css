@@ -40,5 +40,6 @@ button {
 }
 
 .close {
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
 }

@@ -5,7 +5,7 @@ import DetailPage from "./DetailPage";
 import { useRef } from "react";
 import { removePost } from "./localStorage.js";
 
-export default function Post({ post, setData, category }) {
+export default function Post({ post, setData, category, setShowWrite, setMod, setModId, setCategory }) {
   const dialogRef = useRef();
 
   function getDate(createdAt) {
@@ -29,19 +29,26 @@ export default function Post({ post, setData, category }) {
     dialogRef.current.openModal();
   }
 
-  function deletePost(id) {
-    // const newData = data[category].filter((post) => post.id !== id);
-    setData((prev) => ({ ...prev, [category]: [...removePost(id, category)] }));
+  function deletePost(id, e) {
+    e.stopPropagation();
+
+    if (window.confirm("삭제 하시겠습니까??")) {
+      alert("삭제되었습니다");
+      // const newData = data[category].filter((post) => post.id !== id);
+      setData((prev) => ({ ...prev, [category]: [...removePost(id, category)] }));
+    } else {
+      alert("취소합니다");
+    }
   }
 
   return (
     <>
-      <DetailPage post={post} ref={dialogRef} postDate={getDate(post.createdAt)} />
+      <DetailPage post={post} ref={dialogRef} postDate={getDate(post.createdAt)} setShowWrite={setShowWrite} setMod={setMod} category={category} setCategory={setCategory} setModId={setModId} />
 
       <div className={styles.post} key={post.id} onClick={openPost}>
         <div className={styles.post_img}>
           <div className={styles.delete}>
-            <button onClick={() => deletePost(post.id)}>삭제</button>
+            <button onClick={(e) => deletePost(post.id, e)}>삭제</button>
           </div>
           <img src={post.image} alt="포스트 이미지" />
         </div>

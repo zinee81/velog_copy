@@ -1,5 +1,6 @@
 import styles from "./Header.module.css";
 import Tab from "./Tab.jsx";
+import Weather from "./Weather.jsx";
 
 export default function Header({ category, setCategory, showWrite, setShowWrite }) {
   return (
@@ -12,7 +13,12 @@ export default function Header({ category, setCategory, showWrite, setShowWrite 
           <label className={styles.newbtn}>{showWrite ? "메인으로" : "새 글 작성"}</label>
         </div>
       </div>
-      {showWrite ? <></> : <Tab category={category} setCategory={setCategory} />}
+      <div className={styles.header_title}>
+        <div>{showWrite ? <></> : <Tab category={category} setCategory={setCategory} />}</div>
+        <div>
+          <Weather />
+        </div>
+      </div>
     </header>
   );
 }

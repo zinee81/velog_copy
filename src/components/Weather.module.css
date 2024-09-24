@@ -1,0 +1,28 @@
+.winfo {
+  font-size: 13px;
+  color: #7d8ca0;
+}
+
+.data {
+  color: #384d69;
+}
+
+.cloud {
+  color: skyblue;
+}
+
+.sun {
+  color: firebrick;
+}
+
+.snow {
+  color: aquamarine;
+}
+
+.storm {
+  color: darkorange;
+}
+
+.mist {
+  color: lightgray;
+}

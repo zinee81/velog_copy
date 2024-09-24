@@ -1,4 +1,4 @@
-// 투두리스트 읽어오기 (read)
+// 게시물 읽어오기 (read)
 export function getPost() {
   // data -> "["할일","리액트연습"]" -> string
   const data = localStorage.getItem("postData");
@@ -14,7 +14,7 @@ export function getPost() {
   }
 }
 
-// 투두리스트 저장 (create)
+// 게시물 저장 (create)
 /**
  * @param {Array} post
  */
@@ -24,11 +24,11 @@ export function setPost(post) {
   localStorage.setItem("postData", JSON.stringify(post));
 }
 
-// 투두리스트 삭제 (remove)
+// 게시물 삭제 (remove)
 export function removePost(postId, category) {
-  // 현재 가지고 있는 todolist 가져오기
+  // 현재 가지고 있는 post 가져오기
   const postList = getPost();
-  // filter메서드를 사용하여 todo삭제
+  // filter메서드를 사용하여 게시물 삭제
   const newPost = postList[category].filter((post) => post.id !== postId);
   const dataPost = { ...postList, [category]: [...newPost] };
 

@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="wrapper">
       <Header category={category} setCategory={setCategory} showWrite={showWrite} setShowWrite={setShowWrite} />
-      <Main category={category} showWrite={showWrite} setShowWrite={setShowWrite} />
+      <Main category={category} showWrite={showWrite} setShowWrite={setShowWrite} setCategory={setCategory} />
 
       {/* <form onSubmit={onSubmit}>
         <input type="text" id="id" ref={idRef} />
