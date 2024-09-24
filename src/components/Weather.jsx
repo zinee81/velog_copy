@@ -73,8 +73,8 @@ export default function Weather() {
 
   return (
     <div className={styles.winfo}>
-      {weather?.icon} 온도<label className={styles.data}>{weather?.temp}</label>ºC 습도<label className={styles.data}>{weather?.humidity}</label>% <FontAwesomeIcon icon={faLocationDot} />
-      {weather?.city}
+      <FontAwesomeIcon icon={faLocationDot} />
+      {weather?.city} &nbsp; {weather?.icon} &nbsp;<label className={styles.data}>{weather?.temp}</label>ºC &nbsp;<label className={styles.data}>{weather?.humidity}</label>%
     </div>
   );
 }
