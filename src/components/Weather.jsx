@@ -74,7 +74,7 @@ export default function Weather() {
   return (
     <div className={styles.winfo}>
       <FontAwesomeIcon icon={faLocationDot} />
-      {weather?.city} &nbsp; {weather?.icon} &nbsp;<label className={styles.data}>{weather?.temp}</label>ºC &nbsp;<label className={styles.data}>{weather?.humidity}</label>%
+      {weather?.city ?? " 로딩중...."} &nbsp; {weather?.icon} &nbsp;<label className={styles.data}>{weather?.temp}</label>ºC &nbsp;<label className={styles.data}>{weather?.humidity}</label>%
     </div>
   );
 }
