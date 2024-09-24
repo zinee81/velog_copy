@@ -40,6 +40,7 @@ button {
 }
 
 .close {
-  display: flex;
-  justify-content: space-between;
+  text-align: right;
+  /* display: flex;
+  justify-content: space-between; */
 }
