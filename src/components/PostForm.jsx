@@ -45,7 +45,7 @@ export default function PostForm({ setData, setShowWrite }) {
 
       setTimeout(() => {
         setShowWrite(false);
-      }, 2000);
+      }, 500);
     } else {
       dialogRef.current.openModal("모든항목을 입력해주세요");
     }
